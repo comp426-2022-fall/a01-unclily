@@ -1,0 +1,20 @@
+{
+  "name": "pishu-webserver",
+  "version": "0.0.1",
+  "description": "426 assignment a01 webserver build on Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=5555",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a01-unclily.git"
+  },
+  "author": "@unclily",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a01-unclily/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-fall/a01-unclily#readme"
+}
