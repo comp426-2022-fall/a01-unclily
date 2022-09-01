@@ -31,7 +31,7 @@ fs.readFile(fileName, (err, data) => {
 	res.end(data)
     })
   server.listen(port, () => {
-	console.log('Server listening on port ${port}')
+	console.log(`Server listening on port ${port}`)
     })
 })
 
