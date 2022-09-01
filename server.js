@@ -5,7 +5,7 @@ const http = require('http')
 const fs = require('fs')
 
 // Require minimist module (make sure you install this one via npm).
-const mini = require('minimist')(process.argv.slice(2))
+const args = require('minimist')(process.argv.slice(2))
 
 // Use minimist to process one argument `--port=` on the command line after `node server.js`.
 
@@ -24,8 +24,13 @@ fs.readFile(fileName, (err, data) => {
  //     console.error('There was an uncaught error', err)
  //     process.exit(1)
       }
-      //console.log(data)
+      console.log(data)
+      const server = http.createServer((req, res) => {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/html')
+      res.end(data)
     })
+})
 
 // If there is an error, put it on the console error and return. 
 // Do not be nice about exiting.
@@ -40,11 +45,6 @@ fs.readFile(fileName, (err, data) => {
 // 1. status code 200, 
 // 2. set a header with content type `text/html`, and 
 // 3. end with the data that you are reading in from ./public/index.html.
-const server = http.createServer((req, res) => {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/html')
-      res.end(data)
-})
 
 
 
