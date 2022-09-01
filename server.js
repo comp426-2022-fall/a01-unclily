@@ -23,12 +23,17 @@ fs.readFile(fileName, (err, data) => {
         console.log(err)
  //     console.error('There was an uncaught error', err)
  //     process.exit(1)
+	return
       }
       console.log(data)
+
       const server = http.createServer((req, res) => {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/html')
       res.end(data)
+    })
+      server.listen(port, () => {
+      console.log('Server listening on port ${port}')
     })
 })
 
@@ -51,9 +56,6 @@ fs.readFile(fileName, (err, data) => {
 
 // Start the `server` const listening on the port defined by argument in your `port` const. 
 // Put the exact message `Server listening on port ${port}` on the console log. 
-server.listen(port, () => {
-      console.log('Server listening on port ${port}')
-})
 
 
 
