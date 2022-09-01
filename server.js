@@ -19,21 +19,19 @@ const port = args.port || 3000
 // The stuff that should be inside this function is all below.
 const fileName = './public/index.html'
 fs.readFile(fileName, (err, data) => {
-      if (err) {
-        console.error(err)
- //     console.error('There was an uncaught error', err)
- //     process.exit(1)
+  if (err) {
+	console.error(err)
 	return
       }
-      console.log(data)
+  console.log(data)
 
-      const server = http.createServer((req, res) => {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/html')
-      res.end(data)
+  const server = http.createServer((req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Content-Type', 'text/html')
+	res.end(data)
     })
-      server.listen(port, () => {
-      console.log('Server listening on port ${port}')
+  server.listen(port, () => {
+	console.log('Server listening on port ${port}')
     })
 })
 
